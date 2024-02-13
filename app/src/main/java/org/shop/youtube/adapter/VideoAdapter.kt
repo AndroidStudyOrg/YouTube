@@ -11,7 +11,7 @@ import org.shop.youtube.R
 import org.shop.youtube.data.VideoItem
 import org.shop.youtube.databinding.ItemVideoBinding
 
-class VideoAdapter(private val context: Context) :
+class VideoAdapter(private val context: Context, private val onClick: (VideoItem) -> Unit) :
     ListAdapter<VideoItem, VideoAdapter.VideoViewHolder>(diffUtil) {
     inner class VideoViewHolder(private val binding: ItemVideoBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -31,6 +31,9 @@ class VideoAdapter(private val context: Context) :
             Glide.with(binding.channelLogoImageView).load(item.channelThumb).circleCrop()
                 .into(binding.channelLogoImageView)
 
+            binding.root.setOnClickListener {
+                onClick.invoke(item)
+            }
         }
     }
 
