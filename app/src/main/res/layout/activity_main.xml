@@ -64,6 +64,44 @@
         app:layout_constraintStart_toStartOf="@id/videoPlayerContainer"
         app:layout_constraintTop_toTopOf="@id/videoPlayerContainer" />
 
+    <TextView
+        android:id="@+id/videoTitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/videoPlayerContainer"
+        app:layout_constraintEnd_toStartOf="@id/controlButton"
+        app:layout_constraintStart_toEndOf="@id/playerView"
+        app:layout_constraintTop_toTopOf="@id/videoPlayerContainer" />
+
+    <ImageView
+        android:id="@+id/controlButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:padding="10dp"
+        android:src="@drawable/baseline_airplay_24"
+        app:layout_constraintBottom_toBottomOf="@id/videoPlayerContainer"
+        app:layout_constraintEnd_toStartOf="@id/hideButton"
+        app:layout_constraintTop_toTopOf="@id/videoPlayerContainer"
+        tools:alpha="1" />
+
+    <ImageView
+        android:id="@+id/hideButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:padding="10dp"
+        android:src="@drawable/baseline_clear_24"
+        app:layout_constraintBottom_toBottomOf="@id/videoPlayerContainer"
+        app:layout_constraintEnd_toEndOf="@id/videoPlayerContainer"
+        app:layout_constraintTop_toTopOf="@id/videoPlayerContainer"
+        tools:alpha="1" />
+
     <FrameLayout
         android:id="@+id/recyclerViewContainer"
         android:layout_width="0dp"
@@ -89,6 +127,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:menu="@menu/bottom_nav_menu"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>
